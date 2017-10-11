@@ -1,0 +1,13 @@
+<% @users.each do |user| %>
+<%= user.username %>
+<%end%>
+<% @todos.each do |todo| %>
+<%= todo.name %>
+<%end%>
+<% @cats.each do |cat|%>
+<%= cat.id %>
+<%end%>
+<%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+ 	Text: <%=f.text_field :name%><br />
+  <%= f.submit %>
+<% end %>
